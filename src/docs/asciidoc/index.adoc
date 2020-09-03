@@ -47,3 +47,21 @@ include::{snippets}/person/http-response.adoc[]
 HTTP response fields:
 
 include::{snippets}/person/response-fields.adoc[]
+
+=== Fetch all persons information.
+
+To make a request using cURL:
+
+include::{snippets}/person-all/curl-request.adoc[]
+
+HTTP request:
+
+include::{snippets}/person-all/http-request.adoc[]
+
+HTTP response:
+
+include::{snippets}/person-all/http-response.adoc[]
+
+HTTP response fields:
+
+include::{snippets}/person-all/response-fields.adoc[]

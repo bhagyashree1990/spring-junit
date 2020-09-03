@@ -14,6 +14,11 @@ public class PersonService {
 	@Autowired
 	private PersonRepository personRepository;
 	
+	public List<Person> findAll(){
+		System.out.println("PersonService::findAll");
+		return personRepository.findAll();
+	}
+	
 	public Person getYoungest() {
 		System.out.println("PersonService::getYoungest");
 		List<Person> persons = personRepository.findAll();
