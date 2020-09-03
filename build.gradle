@@ -1,3 +1,6 @@
+import java.text.SimpleDateFormat
+import java.net.InetAddress
+
 plugins {
 	id 'org.springframework.boot' version '2.3.3.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
@@ -31,7 +34,11 @@ test {
 }
 
 asciidoctor {
-	attributes 'snippets': snippetsDir
+	attributes 'snippets': snippetsDir,
+				'version': version,
+				'date': new SimpleDateFormat("dd-MM-yyyy").format(new Date()),
+				'hostname': InetAddress.getLocalHost().getHostName(),
+				'ip': InetAddress.getLocalHost().getHostAddress()
 	inputs.dir snippetsDir
 	dependsOn test
 	outputDir "src/main/resources/static/docs"

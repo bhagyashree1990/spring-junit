@@ -1,5 +1,5 @@
 = Spring REST Docs JUnit 5 Sample
-Bhagyashree Chavan - {project-version}, 03-09-2020
+Bhagyashree Chavan - {version}, {date} | {hostname} - {ip} 
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
@@ -29,7 +29,8 @@ HTTP response:
 include::{snippets}/greeting/http-response.adoc[]
 
 == Persons
-Fetch the youngest person information.
+
+=== Fetch the youngest person information.
 
 To make a request using cURL:
 
