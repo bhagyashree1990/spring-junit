@@ -12,5 +12,37 @@ Bhagyashree Chavan - {project-version}, 03-09-2020
 == Greetings
 Sample REST API demonstration of Spring REST Docs with JUnit 5.
 
+To make a request using cURL:
+
+include::{snippets}/greeting/curl-request.adoc[]
+
+HTTP request:
+
+include::{snippets}/greeting/http-request.adoc[]
+
+HTTP request params:
+
+include::{snippets}/greeting/request-parameters.adoc[]
+
+HTTP response:
+
+include::{snippets}/greeting/http-response.adoc[]
+
 == Persons
 Fetch the youngest person information.
+
+To make a request using cURL:
+
+include::{snippets}/person/curl-request.adoc[]
+
+HTTP request:
+
+include::{snippets}/person/http-request.adoc[]
+
+HTTP response:
+
+include::{snippets}/person/http-response.adoc[]
+
+HTTP response fields:
+
+include::{snippets}/person/response-fields.adoc[]

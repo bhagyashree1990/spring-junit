@@ -3,6 +3,7 @@ Spring Junit Demo
 
 1. @WebMvcTest for Controller Tests
 2. @InjectMocks for Service Tests
+3. Using Spring Rest Docs with JUNIT
 
 ## Built With
 
