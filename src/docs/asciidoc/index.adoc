@@ -1,0 +1,16 @@
+= Spring REST Docs JUnit 5 Sample
+Bhagyashree Chavan - {project-version}, 03-09-2020
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:highlightjs-theme: github
+:toc: left
+:toclevels: 3
+:sectlinks:
+:sectnums:
+
+== Greetings
+Sample REST API demonstration of Spring REST Docs with JUnit 5.
+
+== Persons
+Fetch the youngest person information.
