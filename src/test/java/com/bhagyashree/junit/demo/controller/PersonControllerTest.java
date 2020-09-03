@@ -9,17 +9,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.bhagyashree.junit.demo.model.Person;
 import com.bhagyashree.junit.demo.service.PersonService;
 
-@ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = PersonController.class)
 class PersonControllerTest {
 
