@@ -18,14 +18,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.restdocs.payload.FieldDescriptor;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.bhagyashree.junit.demo.config.CustomRestDocsConfiguration;
 import com.bhagyashree.junit.demo.model.Person;
 import com.bhagyashree.junit.demo.service.PersonService;
 
+
 @WebMvcTest(controllers = PersonController.class)
 @AutoConfigureRestDocs
+@Import({CustomRestDocsConfiguration.class})
 class PersonControllerTest {
 
 	@Autowired
@@ -50,7 +54,7 @@ class PersonControllerTest {
 		when(personService.getYoungest()).thenReturn(personExpected);
 		mvc.perform(get("/persons/youngest"))
 				.andDo(
-					document("person",responseFields(personDescriptor)))
+					document("{class-name}/{method-name}",responseFields(personDescriptor)))
 				.andExpect(status().isOk())
 				.andExpect(jsonPath("$.firstName").value(personExpected.getFirstName()))
 				.andExpect(jsonPath("$.lastName").value(personExpected.getLastName()))
@@ -65,7 +69,7 @@ class PersonControllerTest {
 		List<Person> persons = Arrays.asList(person1,person2);
 		when(personService.findAll()).thenReturn(persons);
 		mvc.perform(get("/persons"))
-				.andDo(document("person-all", 
+				.andDo(document("{class-name}/{method-name}", 
 						responseFields(fieldWithPath("[]").description("Array of persons"))
 							.andWithPrefix("[].", personDescriptor)
 					))

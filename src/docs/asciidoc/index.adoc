@@ -10,58 +10,74 @@ Bhagyashree Chavan - {version}, {date} | {hostname} - {ip}
 :sectnums:
 
 == Greetings
-Sample REST API demonstration of Spring REST Docs with JUnit 5.
+=== Greet
 
-To make a request using cURL:
+cURL:
 
-include::{snippets}/greeting/curl-request.adoc[]
+include::{snippets}/greeting-controller-test/test-greet/curl-request.adoc[]
 
 HTTP request:
 
-include::{snippets}/greeting/http-request.adoc[]
+include::{snippets}/greeting-controller-test/test-greet/http-request.adoc[]
+
+HTTP response:
+
+include::{snippets}/greeting-controller-test/test-greet/http-response.adoc[]
+
+=== Hello
+
+cURL:
+
+include::{snippets}/greeting-controller-test/test-hello-with-name/curl-request.adoc[]
+
+HTTP request:
+
+include::{snippets}/greeting-controller-test/test-hello-with-name/http-request.adoc[]
 
 HTTP request params:
 
-include::{snippets}/greeting/request-parameters.adoc[]
+include::{snippets}/greeting-controller-test/test-hello-with-name/request-parameters.adoc[]
 
 HTTP response:
 
-include::{snippets}/greeting/http-response.adoc[]
+include::{snippets}/greeting-controller-test/test-hello-with-name/http-response.adoc[]
 
 == Persons
 
+[[persons_youngest]]
 === Fetch the youngest person information.
 
-To make a request using cURL:
+cURL:
 
-include::{snippets}/person/curl-request.adoc[]
+include::{snippets}/person-controller-test/test-get-youngest/curl-request.adoc[]
 
 HTTP request:
 
-include::{snippets}/person/http-request.adoc[]
+include::{snippets}/person-controller-test/test-get-youngest/http-request.adoc[]
 
 HTTP response:
 
-include::{snippets}/person/http-response.adoc[]
+include::{snippets}/person-controller-test/test-get-youngest/http-response.adoc[]
 
 HTTP response fields:
 
-include::{snippets}/person/response-fields.adoc[]
+include::{snippets}/person-controller-test/test-get-youngest/response-fields.adoc[]
 
+[[persons]]
 === Fetch all persons information.
 
-To make a request using cURL:
+cURL:
 
-include::{snippets}/person-all/curl-request.adoc[]
+include::{snippets}/person-controller-test/test-find-all/curl-request.adoc[]
 
 HTTP request:
 
-include::{snippets}/person-all/http-request.adoc[]
+include::{snippets}/person-controller-test/test-find-all/http-request.adoc[]
 
 HTTP response:
 
-include::{snippets}/person-all/http-response.adoc[]
+include::{snippets}/person-controller-test/test-find-all/http-response.adoc[]
 
 HTTP response fields:
 
-include::{snippets}/person-all/response-fields.adoc[]
+include::{snippets}/person-controller-test/test-find-all/response-fields.adoc[]

@@ -13,11 +13,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.restdocs.AutoConfigureRestDocs;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 
+import com.bhagyashree.junit.demo.config.CustomRestDocsConfiguration;
 import com.bhagyashree.junit.demo.service.GreetingService;
+
 @WebMvcTest(controllers = GreetingController.class)
 @AutoConfigureRestDocs
+@Import({CustomRestDocsConfiguration.class})
 class GreetingControllerTest {
 
 	@Autowired
@@ -47,10 +51,17 @@ class GreetingControllerTest {
 		when(greetingService.greetHello("John")).thenReturn("Hello John");
 		mvc.perform(get("/greeting/hello?name=John"))
 			.andDo(
-					document("greeting",
+					document("{class-name}/{method-name}",
 						requestParameters(
 							parameterWithName("name").description("The name to greet")
 						)))
 			.andExpect(content().string("Hello John"));
+	}
+	
+	@Test
+	void testGreet() throws Exception{
+		mvc.perform(get("/greeting"))
+			.andDo(print())
+			.andExpect(content().string("Good Day!"));
 	}
 }

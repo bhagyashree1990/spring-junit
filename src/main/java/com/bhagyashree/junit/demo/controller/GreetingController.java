@@ -20,4 +20,8 @@ public class GreetingController {
 		return greetingService.greetHello(name);
 	}
 	
+	@GetMapping
+	public String greet() {
+		return "Good Day!";
+	}
 }
