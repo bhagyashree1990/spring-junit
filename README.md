@@ -4,6 +4,8 @@ Spring Junit Demo
 1. @WebMvcTest for Controller Tests
 2. @InjectMocks for Service Tests
 3. Using Spring Rest Docs with JUNIT
+4. Using custom RestDocsMockMvcConfiguration
+5. Use parameterized output directory to automatically generate the default snippets for each MockMvc
 
 ## Built With
 
